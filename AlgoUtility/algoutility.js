@@ -34,36 +34,10 @@ console.log(PrimeNum)
 },
 
 
-/**
-  * @Purpose:To find the prime numbers that are Anagram and Palindrome
-  * @author Sejal Gaikwad
-  * @version 1.0
-  * @since 
-  **/
 
-
- primeAnagramPalindrom(str)
- {   
-  var i, j;
-  //console.log(str);
- 
-  for (i = 0; i < str.length - 1; i++) {
-    for (j = i + 1; j < str.length; j++) {
-      if (this.checkAnagram(str[i], str[j])){
-        //console.log("Is Anagram")
     
-    if (this.palindrom(str))
-    {
-      console.log(str + " are palindrome")
-    }
-        
-      }
-    }
 
-    }
-  
 
-},
 /************************palindrom*************************/
 
 palindrom(str) {
@@ -85,9 +59,7 @@ palindrom(str) {
 
 },
 
-/**
-  * @Purpose:Check using Stopwatch the Elapsed Time using Static Search and Sorted List
-  **/
+/** Check using Stopwatch the Elapsed Time using Static Search and Sorted List **/
   /*binarySearch method for integer*/
 
 
@@ -135,7 +107,7 @@ palindrom(str) {
   /*binarySearch method for String*/
   
   binarySearchString(arr, string) {
-    console.log("in binary search [ " + arr + ' ]')
+   
     var temp = arr.length
     var high = temp - 1;
     var low = 0;
@@ -373,7 +345,7 @@ Find the Fewest Notes to be returned for Vending Machine
 vendingMachine(arr, amount) {
 
   var notes = 0
-  for (let i = 0; i < arr.length; i++) {
+  for (var i = 0; i < arr.length; i++) {
     if (amount / arr[i] >= 1) {
       var c = Math.floor(amount / arr[i])
       notes = notes + c
@@ -463,7 +435,7 @@ findSquare(c) {
 
 
 toDecimal(num) {
-  //num = this.toBinary(num)
+  /*//num = this.toBinary(num)
   //binary convertion
   var str = num;
   var bin = (+str).toString(2);
@@ -492,8 +464,21 @@ toDecimal(num) {
     }
   }
 
-},
+},*/
 
+var rem=  [20];
+var  index=0;
+while(num>0)
+{
+  rem[index]=num%2;
+  index++;
+  num=num/2;
+}
+for(var i=(index-1);i>=0;i--)
+{
+  console.log(rem[i])
+}
+}
 }
 
   

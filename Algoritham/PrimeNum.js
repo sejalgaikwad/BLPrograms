@@ -1,8 +1,8 @@
-var util =require("../AlgoUtility/algoutility")
+
 
 var read = require('readline-sync');
 
-var num =read.question("Enter the number :");
+var util =require("../AlgoUtility/algoutility")
 
 
-util.primeNum(num);
+util.primeNum();

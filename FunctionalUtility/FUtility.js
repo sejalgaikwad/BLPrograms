@@ -219,50 +219,6 @@ module.exports=
      distance=Math.sqrt((x*x)+(y*y));
      console.log("Distance between("+x+","+y+") to origin (0,0)="+distance);
  },
- /* Permutation of a String */
-
- permutation1(string,first)
- {
-    var string=" ";
-    
-    last =string.length-1;
-    if(first==last)
-    {
-        string=string+str;
-
-    }
-    else
-    {
-        for(var index=first;index<=last;index++)
-        {
-            str=this.swapString(str,first,index);
-            string=this.Permutation1(str,first+1);
-            str=this.swapString(str,first,index);
-
-        }
-
-    }
-    return string;
- },
-
- swapString(str,first,index)
- {
-     var as =' ';
-     var ch=[];
-     ch=str.split('');
-     var temp=ch[first];
-     ch[first]=ch[last];
-     ch[last]=temp;
-
-     for(let index=0; index<str.length;index++)
-     {
-         as=as+ch[index];
-
-     }
-     return as;
-
- },
- 
  
 
  /* Simulate stopwatch Program */
