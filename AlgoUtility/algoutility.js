@@ -85,12 +85,103 @@ palindrom(str) {
 
 },
 
+/**
+  * @Purpose:Check using Stopwatch the Elapsed Time using Static Search and Sorted List
+  **/
+  /*binarySearch method for integer*/
 
 
-/*binarySearch method for integer*/
 
 
-/*binarySearch method for String*/
+  binarySearchInt(arr, number) {
+    //console.log("in binary search " + arr)
+    var temp = arr.length
+    var high = temp - 1;
+    var low = 0;
+    var mid = 0;
+  
+    while (low < high) {
+      mid = Math.floor((high + low) / 2)
+      if (arr[mid] == number) {
+        console.log("number is present in " + (mid + 1) + "rd position")
+        return true
+      }
+      else if (arr[mid] > number) {
+  
+        high = mid - 1
+      }
+      else {
+        low = mid + 1
+      }
+      if (low > high) {
+  
+        //return false;
+        console.log("invalid input")
+      }
+    }
+  },
+  
+  sortarrayInt(array) {
+    var sort = array.sort(function (a, b) { return a - b });
+    console.log(sort)
+  
+    var number = read.question("enter the number which you want to search: ")
+  
+    var arr = sort;
+    var sortedlist = this.binarySearchInt(arr, number);
+  
+  },
+  
+  /*binarySearch method for String*/
+  
+  binarySearchString(arr, string) {
+    console.log("in binary search [ " + arr + ' ]')
+    var temp = arr.length
+    var high = temp - 1;
+    var low = 0;
+    var mid = 0;
+  
+    while (low < high) {
+      mid = Math.floor((high + low) / 2)
+      if (arr[mid] == string) {
+        console.log("string is present in " + (mid + 1) + "rd position")
+        return true
+      }
+      else if (arr[mid] > string) {
+  
+        high = mid - 1
+      }
+      else {
+        low = mid + 1
+      }
+      if (low > high) {
+  
+        //return false;
+        console.log("invalid input")
+      }
+    }
+  },
+  sortarrayString(array) {
+    var s1 = array.sort();
+    console.log(s1)
+    var arr = s1;
+    var String = read.question("enter the string which you want to search: ")
+  
+  
+    var sortedlist = this.binarySearchString(arr, String);
+  
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
 /*insertionSort method for integer*/
 
 insertionSortInt(arr) {
@@ -157,13 +248,121 @@ bubbleSortString(arr) {
   return arr;
 },
 
+/**  Stopwatch using sorting search method*/
+
+StopwatchSearchAndSort(arr) {
+
+  //binary search
+
+  var start = this.stopwatchmill()
+  var temp = this.sortarrayInt(arr)
+  var stop = this.stopwatchmill()
+  var totaltime1 = stop - start;
+  console.log("Binary Search take " + totaltime1 + " millsecond to exicute the code");
+  console.log();
 
 
-/*Question to find your number*/
-/*Binary seach*/
-/*InsertionSort */
-/*bubbleSort*/ 
-/*mergeSort*/
+  //bubble Sort
+  var start = this.stopwatchmill()
+  var temp = this.bubbleSortInt(arr)
+  var stop = this.stopwatchmill()
+  var totaltime2 = stop - start;
+  console.log("Bubble Sort take " + totaltime2 + " millsecond  to exicute the code");
+  console.log();
+
+
+
+
+  //insertion sort
+
+  var start = this.stopwatchmill()
+  var temp = this.insertionSortInt(arr)
+  var stop = this.stopwatchmill()
+  var totaltime3 = stop - start;
+  console.log("Insertion Sort take " + totaltime3 + " millsecond  to exicutethe code");
+
+
+
+
+},
+
+stopwatchmill() {
+  var time;
+  var date = new Date();
+  time = date.getMilliseconds();
+  console.log(time)
+
+  return time
+
+},
+
+stopwatch() {
+  var date = new Date();
+  return date.getSeconds();
+},
+
+
+/** Write a program with Static Functions to do Merge Sort of list of Strings.**/
+  
+ mergeSort(res) {
+  
+  var n = res.length;
+
+  if (n == 1) {
+    return;
+  }
+
+  var mid = Math.floor(n / 2);
+  var left = [mid];
+  var right = [n - mid];
+
+  for (let i = 0; i < mid; i++) {
+    left[i] = res[i];
+  }
+
+  for (let j = mid; j < n; j++) {
+    right[j - mid] = res[j];
+  }
+
+  this.mergeSort(left);
+
+  this.mergeSort(right);
+
+  this.merge(left, right, res);
+
+},
+
+merge(arr, brr, crr) {
+  var i = 0; var j = 0;
+  var k = 0;
+
+  while (i < parseInt(arr.length) && j < parseInt(brr.length)) {
+    if (parseInt(arr[i]) <= parseInt(brr[j])) {
+      crr[k] = arr[i]
+      i++;
+    }
+    else {
+      crr[k] = parseInt(brr[j]);
+      j++;
+    }
+    k++;
+  }
+
+  while (i < parseInt(arr.length)) {
+    crr[k] = arr[i];
+    i++;
+    k++;
+  }
+
+  while (j < parseInt(brr.length)) {
+    crr[k] = brr[j];
+    j++;
+    k++;
+  }
+  return crr;
+},
+
+
 
 
 /**
@@ -260,9 +459,7 @@ findSquare(c) {
 
 
 
-/**
-to convert decimaldemo into binary 
-**/
+/** to convert decimaldemo into binary **/
 
 
 toDecimal(num) {
@@ -297,314 +494,9 @@ toDecimal(num) {
 
 },
 
-
-
-  /**
-  *Anagram Detection */
-
-  checkAnagram(string1, string2) {
-
-    //var result;
-    var ch1 =[], ch2 =[];
-    string1 =string1 + ""
-    string2=string2 + ""
-    ch1 =string1.split('');
-    ch2 =string2.split('');
-    if (ch1.length != ch2.length) {
-     //console.log("string are not anagram");
-      return false;
-    }
-
-    var str1 = ch1.sort();
-    var str2 = ch2.sort();
-    for (var i = 0; i < str1.length; i++) {
-      var count = 0;
-        for (var j = 0; j < str2.length; j++) {
-
-        if (str2[j].toLowerCase() == str1[i].toLowerCase()) {
-           
-          count++;
-          break;
-         
-        }
-      }
-
-    }
-if (count > 0){
-   //console.log("string are anagram");
-    return true;
 }
-else
-//console.log("string is not anagram ")
-return false
 
-  },
   
   
-  /**
-  * @Purpose:Check using Stopwatch the Elapsed Time using Static Search and Sorted List
-  **/
-  /****************  Binary Search Int  ************************/
-
-  binarySearchInt(arr, number) {
-  //console.log("in binary search " + arr)
-  var temp = arr.length
-  var high = temp - 1;
-  var low = 0;
-  var mid = 0;
-
-  while (low < high) {
-    mid = Math.floor((high + low) / 2)
-    if (arr[mid] == number) {
-      console.log("number is present in " + (mid + 1) + "rd position")
-      return true
-    }
-    else if (arr[mid] > number) {
-
-      high = mid - 1
-    }
-    else {
-      low = mid + 1
-    }
-    if (low > high) {
-
-      //return false;
-      console.log("invalid input")
-    }
-  }
-},
-
-sortarrayInt(array) {
-  var sort = array.sort(function (a, b) { return a - b });
-  console.log(sort)
-
-  var number = read.question("enter the number which you want to search: ")
-
-  var arr = sort;
-  var sortedlist = this.binarySearchInt(arr, number);
-
-},
-
-/****************  Binary Search string************************/
-
-binarySearchString(arr, string) {
-  console.log("in binary search [ " + arr + ' ]')
-  var temp = arr.length
-  var high = temp - 1;
-  var low = 0;
-  var mid = 0;
-
-  while (low < high) {
-    mid = Math.floor((high + low) / 2)
-    if (arr[mid] == string) {
-      console.log("string is present in " + (mid + 1) + "rd position")
-      return true
-    }
-    else if (arr[mid] > string) {
-
-      high = mid - 1
-    }
-    else {
-      low = mid + 1
-    }
-    if (low > high) {
-
-      //return false;
-      console.log("invalid input")
-    }
-  }
-},
-sortarrayString(array) {
-  var s1 = array.sort();
-  console.log(s1)
-  var arr = s1;
-  var String = read.question("enter the string which you want to search: ")
-
-
-  var sortedlist = this.binarySearchString(arr, String);
-
-},
-/************************ read file     **************************************/
- 
-fileCall(fileName) {
-  var fileStream = require('fs');
-  var f = fileStream.readFileSync(fileName, 'utf8');
-  var arr = f.trim().split(' ');
- console.log(arr + "   in arr")
-  return arr;
-},
-
-
-
-
-
-
-/************************Stopwatch using bubble sort **************************/
-StopwatchSearchAndSort(arr) {
-
-  //binary search
-
-  var start = this.stopwatchmill()
-  var temp = this.sortarrayInt(arr)
-  var stop = this.stopwatchmill()
-  var totaltime1 = stop - start;
-  console.log("Binary Search take " + totaltime1 + " millsecond to exicute the code");
-  console.log();
-
-
-  //bubble Sort
-  var start = this.stopwatchmill()
-  var temp = this.bubbleSortInt(arr)
-  var stop = this.stopwatchmill()
-  var totaltime2 = stop - start;
-  console.log("Bubble Sort take " + totaltime2 + " millsecond  to exicute the code");
-  console.log();
-
-
-
-
-  //insertion sort
-
-  var start = this.stopwatchmill()
-  var temp = this.insertionSortInt(arr)
-  var stop = this.stopwatchmill()
-  var totaltime3 = stop - start;
-  console.log("Insertion Sort take " + totaltime3 + " millsecond  to exicutethe code");
-
-
-
-
-},
-
-stopwatchmill() {
-  var time;
-  var date = new Date();
-  time = date.getMilliseconds();
-  console.log(time)
-
-  return time
-
-},
-
-stopwatch() {
-  var date = new Date();
-  return date.getSeconds();
-},
-/**
-* @Purpose:convert decimal to binary and Swap nibbles and find the new number 
-* @author Sejal Gaikwad
-* @version 1.0
-* @since 
-**/
-
-toBinary(num) {
-  var temp = num;
-  var st = "";
-  while (temp > .9) {
-
-    var s = Math.floor(temp % 2)
-    st = s + st
-    temp = temp / 2
-
-  }
-
-  console.log("binary value for given number is:" + st)
-  var swap = this.swap(st)
-},
-
-swap(num) {
-  var fn = num.slice(0, 4)
-  var ln = num.slice(4)
-  swap = ln + fn;
-  //var swap = ((num & 0x0F) << 4 | (num & 0xF0) >> 4)
-  console.log("After Swaping two nibbles" + swap)
-  console.log("Decimal number is :" + parseInt(swap, 2))
-},
-
-/**
-* @Purpose:​ Write a program with Static Functions to do Merge Sort of list of Strings.
-* @author Sejal Gaikwad
-* @version 1.0
-* @since 
-**/
-
-mergeSort(res) {
-
-  var n = res.length;
-
-  if (n == 1) {
-    return;
-  }
-
-  var mid = Math.floor(n / 2);
-  var left = [mid];
-  var right = [n - mid];
-
-  for (let i = 0; i < mid; i++) {
-    left[i] = res[i];
-  }
-
-  for (let j = mid; j < n; j++) {
-    right[j - mid] = res[j];
-  }
-
-  this.mergeSort(left);
-
-  this.mergeSort(right);
-
-  this.merge(left, right, res);
-
-},
-
-merge(arr, brr, crr) {
-  var i = 0; var j = 0;
-  var k = 0;
-
-  while (i < parseInt(arr.length) && j < parseInt(brr.length)) {
-    if (parseInt(arr[i]) <= parseInt(brr[j])) {
-      crr[k] = arr[i]
-      i++;
-    }
-    else {
-      crr[k] = parseInt(brr[j]);
-      j++;
-    }
-    k++;
-  }
-
-  while (i < parseInt(arr.length)) {
-    crr[k] = arr[i];
-    i++;
-    k++;
-  }
-
-  while (j < parseInt(brr.length)) {
-    crr[k] = brr[j];
-    j++;
-    k++;
-  }
-  return crr;
-},
-
-/*******************assignment*************************/
-demo(number1,number2) {
-  var arr = [];
-  var num = 0;
-  while (number2 != num) {
-      var x = Math.round(Math.random() * number2)
-      if( x >= number1){
-      if (!arr.includes(x)) {
-          arr.push(x);
-          num++;
-      }
-  }
-  else{ 
-      num++;
-  }
-}
-  console.log(arr)
-},
-
-
-}
-
+  
+  
