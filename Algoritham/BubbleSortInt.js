@@ -32,6 +32,7 @@ for(var i=0;i < n;i++)
 arr[i]=read.question( );
 }
 
-util.bubbleSortString(arr) ;
+util.bubbleSortInt(arr) ;
 console.log("sorted array: ")
 console.log(arr)
+

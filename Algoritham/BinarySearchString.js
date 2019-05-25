@@ -12,6 +12,4 @@ array[i]=read.question( );
 
 }
 
-
-
 util.sortarrayString(array);

@@ -31,7 +31,6 @@ var read = require('readline-sync');
     }
     else
     {
-     console.log(" date must be in between 1 to 31")   
     }
 
      

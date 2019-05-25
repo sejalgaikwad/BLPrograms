@@ -180,7 +180,7 @@ module.exports=
                 arr[i][j]=read.question("enter the Element of :'row'"+i+" 'column'"+j+" :" )
             }
         }
-        console.log(arr);
+         console.log(arr);
     
  },
 
@@ -200,16 +200,18 @@ module.exports=
                     {
                         console.log("Sum of three integer "+arr[i]+" "+arr[j]+" "+arr[k]+" ")
                     }
-                    else
-                    {
-                        console.log("inavalide Data")
-                    }
+                   
                  }
              }
          }
+
+        
      }
 
-
+     else
+     {
+         console.log("inavalide Data")
+     }
  },
  
  /* Calculate Distance */
@@ -223,21 +225,16 @@ module.exports=
 
  /* Simulate stopwatch Program */
  
- stopwatchmill()
+ stopwatchmill()           
  {
      var time=new Date();
      return time.getMilliseconds();
  },
 findTime()
 {
-  var starttime;
-  var stoptime;
-
-  var starttime=read.question("Enter key for Starttime ");
   var start=this.stopwatchmill();
   console.log("Start time: "+ start)
-
-  var starttime=read.question("Enter key for Stoptime");
+ 
   var stop=this.stopwatchmill();
   console.log("Stop time: "+ stop)
 
@@ -256,10 +253,10 @@ findTime()
     if(determine>0) //// condition for real and different roots
     {
         sqrt=Math.sqrt(determine);
-        r1=(-b+sqrt)/(2*a);
-        r1=(-b-sqrt)/(2*a);
-        console.log("root 1"+r1);
-        console.log("root 2"+r2);
+        r1=((-b+sqrt)/(2*a));
+        r2=((-b-sqrt)/(2*a));
+        console.log("root 1:"+r1);
+        console.log("root 2:"+r2);
     }
     else if(determine==0) //// Condition for real and equal roots
     {
@@ -270,8 +267,8 @@ findTime()
     {
         var real  =-b/(2*a);
         var imginary =Math.sqrt(-determine)/(2*a);
-        console.log("Root1 : " + real + "i +" +  imginary )
-        console.log("Root2 : " + real + "i -" + imginary)
+        console.log("Root1 : " + real + "+ i" +  imginary )
+        console.log("Root2 : " + real + "- i" + imginary)
     }
 },
  
@@ -290,4 +287,7 @@ findTime()
          console.log("windchill : "+wc);
      }
  },
+
+ 
+ 
 }
