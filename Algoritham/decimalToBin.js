@@ -18,8 +18,6 @@ function ConvertToBinary(dec)
     bits.push(dividend);
     bits.reverse();
     return bits.join("")
-
-   
 }
 console.log(ConvertToBinary(dec))
 

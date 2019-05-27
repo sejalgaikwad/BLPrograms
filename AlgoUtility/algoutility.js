@@ -27,13 +27,14 @@ isAnagram (str1, str2)
 
 
 /*Prime Number */
+
 primeNum()
 {
  var PrimeNum =" ";
  for(var i=1;i<=1000;i++)
  {
     var temp=0;
-    for(var j=0;j<=i;j++)
+    for(var j=1;j<=i;j++)
     {
         if(i%j==0)
         {
@@ -50,25 +51,6 @@ console.log(PrimeNum)
 },
 
 
-/*** palindrom ***/
-
-palindrom(str) 
-{
- var num , rev = 0 , rem;
- num = str;
-  while( num != 0 )
-  {
-      rem = num % 10;
-      rev = rev * 10 + rem;
-      num  /= 10;
-  }
-
-  if (str == rev)
-      return str;
-},
-
-
-
 /** Check using Stopwatch the Elapsed Time using Static Search and Sorted List **/
 
 /*binarySearch method for integer*/
@@ -83,9 +65,7 @@ sortarrayInt(array)
 
   var arr = sort;
   var sortedlist = this.binarySearchInt(arr, number);
-
 },
-
 
 binarySearchInt(arr, number) 
 {
@@ -101,7 +81,6 @@ binarySearchInt(arr, number)
     if (arr[mid] == number) 
     {
       console.log("number is present in " + (mid + 1) + "rd position")
-      return true
     }
     else if (arr[mid] > number) 
     {
@@ -114,18 +93,12 @@ binarySearchInt(arr, number)
       mid = Math.floor((high + low) / 2)
     }
   }
-    if (low > high) {
-
-     
-      console.log("invalid input")
+    if (low > high) 
+    { 
+      console.log("Number is not found")
     }
-
-  
 },
 
-
-  
-  
   /*binarySearch method for String*/
   
   sortarrayString(array) 
@@ -135,12 +108,10 @@ binarySearchInt(arr, number)
     var arr = s1;
     var String = read.question("enter the string which you want to search: ")
     var sortedlist = this.binarySearchString(arr, String);
-    
-  },
+ },
   
-
   binarySearchString(arr, string)
-   { 
+  { 
     var temp = arr.length
     var high = temp - 1;
     var low = 0;
@@ -170,8 +141,6 @@ binarySearchInt(arr, number)
     }
   },
   
-
-
 /*insertionSort method for Int */
 
 insertionSortInt(arr) 
@@ -189,7 +158,6 @@ insertionSortInt(arr)
   }
   return arr;
 },
-
 
 /*insertionSort method for String*/
 
@@ -211,7 +179,6 @@ insertionSortString(arr)
 
 /*bubbleSort method for integer*/
 
-
 bubbleSortInt(arr) 
 {
   var n = arr.length;
@@ -219,7 +186,7 @@ bubbleSortInt(arr)
   {
     for (var j = 0; j < n - i - 1; j++) 
     {
-      if (parseInt(arr[j]) > parseInt(arr[j + 1])) //Desending Order
+      if (parseInt(arr[j]) > parseInt(arr[j + 1])) 
       {
         var temp = parseInt(arr[j]);
         arr[j] = parseInt(arr[j + 1]);
@@ -232,7 +199,9 @@ bubbleSortInt(arr)
   
   
 },
+
 /*bubbleSort method for String */
+
 bubbleSortString(arr) 
 {
   var n = arr.length;
@@ -251,6 +220,7 @@ bubbleSortString(arr)
   }
   return arr;
 },
+
 
 /**  Stopwatch using sorting search method*/
 
@@ -296,82 +266,7 @@ stopwatchmill()
 
 
 
-
-/** Write a program with Static Functions to do Merge Sort of list of Strings.**/
-  
- mergeSort(res) 
- {
-  
-  var n = res.length;
-
-  if (n == 1) 
-  {
-    return;
-  }
-
-  var mid = Math.floor(n / 2);
-  var left = [mid];
-  var right = [n - mid];
-
-  for (let i = 0; i < mid; i++) 
-  {
-    left[i] = res[i];
-  }
-
-  for (let j = mid; j < n; j++) 
-  {
-    right[j - mid] = res[j];
-  }
-
-  this.mergeSort(left);
-
-  this.mergeSort(right);
-
-  this.merge(left, right, res);
-
-},
-
-merge(arr, brr, crr) 
-{
-  var i = 0; var j = 0;
-  var k = 0;
-
-  while (i < parseInt(arr.length) && j < parseInt(brr.length)) 
-  {
-    if (parseInt(arr[i]) <= parseInt(brr[j])) 
-    {
-      crr[k] = arr[i]
-      i++;
-    }
-    else 
-    {
-      crr[k] = parseInt(brr[j]);
-      j++;
-    }
-    k++;
-  }
-
-  while (i < parseInt(arr.length)) 
-  {
-    crr[k] = arr[i];
-    i++;
-    k++;
-  }
-
-  while (j < parseInt(brr.length)) 
-  {
-    crr[k] = brr[j];
-    j++;
-    k++;
-  }
-  return crr;
-},
-
-
-
-
 /** Find the Fewest Notes to be returned for Vending Machine **/
-
 
 vendingMachine(arr, amount) 
 {
@@ -384,8 +279,7 @@ vendingMachine(arr, amount)
       notes = notes + c
       console.log(arr[i] + " notes are :" + c)
       amount = amount % arr[i]
-      if (amount == 0)
-        return
+      
     }
   }
   console.log("total number of notes :" + notes)
@@ -407,8 +301,6 @@ dayOfWeek(d, m, y)
 },
 
 
-
-
 /**add temperaturConversion static function and find temperature in Celsius or viceversa */
 
 convertToF(celsius) 
@@ -427,6 +319,7 @@ convertToC(fahrenheit)
 
 
 /**Monthly payment */
+
 monthlyPayment(Y,R,P)
 {
     var n=12*Y;
@@ -449,5 +342,4 @@ findSquare(c)
   console.log("estimated of the square root :" + t);
   return t;
 },
-
 }

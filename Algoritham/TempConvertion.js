@@ -6,8 +6,7 @@ var choice= read.question("enter The choice:");
 
 if(choice==1)
 {
-var celsius= read.question("enter The temperature celsius:");
-
+ var celsius= read.question("enter The temperature celsius:");
  util.convertToF(celsius);
 }
 if(choice==2)

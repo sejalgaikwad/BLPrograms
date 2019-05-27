@@ -3,6 +3,7 @@ var read= require('readline-sync');
 module.exports=
 {
 
+
  /* User Input and Replace String Templet "Hello <<Username>>, How are you?" */
 
  strRepalce(name)
@@ -17,7 +18,10 @@ module.exports=
     var rs=str.replace('<<User name>>',name);
     console.log(rs);
  },
+
+
  /* Flip Coin and print percentage of heads and tails */
+
  Flip(number)
  {
      var head=0;
@@ -44,6 +48,7 @@ module.exports=
 
 
  /* Leap year */
+
  leapyear(year)
  {
    if(year%400==0 || year%4==0 && year%100!=0)
@@ -55,7 +60,10 @@ module.exports=
        console.log(year+" is not a leap year")
    }
  },
+
+
  /* Power of 2 */
+
  power(number)
  {
     var i=0;
@@ -70,23 +78,28 @@ module.exports=
     }
  },
 
+
  /* Harmonic Number */
+
  HarmonicNum(num)
  {
-     var strSeries=1;
+     var HarSeries=1;
      var result=0;
      for(var temp=2;temp<=num;temp++)
      {
-         strSeries +="+(1/"+temp+")"
+         HarSeries +="+(1/"+temp+")"
      }
      while(num>0)
      {
          result=result + 1/num;
          num--
      }
-     console.log(strSeries+" = "+result);
+     console.log(HarSeries+" = "+result);
  },
+
+
  /* Factor */
+
  Fact(num)
  {
      while(num%2 == 0)
@@ -102,12 +115,13 @@ module.exports=
              num=num/i;
          }
      }
-
      if(num > 2)
      console.log(num+'');
  },
 
+
  /* Gambler */
+
  gambler(stake,goal,trial)
  {
      var wins=0;
@@ -116,40 +130,33 @@ module.exports=
     
          while(cash > 0 && cash < goal)
          {
-             for(var i=0;i<trial;i++)
-             {
+           for(var i=0;i<trial;i++)
+            {
                bets++
              if(Math.random()<0.5)
              {
-                
-                cash++;     // Win 
-                 
+                 cash++;     // Win 
              }
              else
              {
                  cash--;    //loss
              }
-            if(cash==goal)
-            {
+             if(cash==goal)
+             {
                wins++;    
-            }
-          
+             }
+           }
          }
-        }
-
          console.log(wins+" wins of "+trial)
          
          var a=(wins*100)/trial;
-         console.log("win percentage=" +a);
-         
-
-         
-         
-    
-    
-
+         console.log("win percentage= " +a);
+         var b=(100-a)
+         console.log("loss percentage= " +b);
  },
+
  /* Coupon NUmber */
+
  CouponNum(number1)
  {
      var arr =[];
@@ -166,9 +173,10 @@ module.exports=
      }
      console.log(arr)
  },
+
  /* 2D Arrays */
  
-    array(row,colm)
+  array(row,colm)
     {
         var arr =[];
         for(var i=0;i<row;i++)
@@ -185,6 +193,7 @@ module.exports=
  },
 
  /* Sum Of three integer adds to ZERO */
+
  triplet(arr)
  {
      if(arr.length!=0)
@@ -215,6 +224,7 @@ module.exports=
  },
  
  /* Calculate Distance */
+
  point(x,y)
  {
      
@@ -244,6 +254,7 @@ findTime()
 
 
  /* Find Quadratic*/
+
  quadratic(a,b,c)
  {
     var determine =b*b-4*a*c;
@@ -265,7 +276,7 @@ findTime()
     }
     else //If roots are not real
     {
-        var real  =-b/(2*a);
+        var real =-b/(2*a);
         var imginary =Math.sqrt(-determine)/(2*a);
         console.log("Root1 : " + real + "+ i" +  imginary )
         console.log("Root2 : " + real + "- i" + imginary)
@@ -273,6 +284,7 @@ findTime()
 },
  
  /* WindChill*/
+ 
  windchill(v,t)
  {
      if(t>=50 || v>=120 || v<=3)

@@ -1,13 +1,7 @@
 var util =require("../AlgoUtility/algoutility")
 
 var read = require('readline-sync');
-/*
-    let d = Number(process.argv[4]);
-    let m = Number(process.argv[2]);
-    let y = Number(process.argv[3]);
-    */
   
-
   var d=read.question("Enter the date: ")
     if (d >= 1 && d <= 31)
     {  
@@ -31,6 +25,7 @@ var read = require('readline-sync');
     }
     else
     {
+      console.log(" Day  must be in between 1 to 31")
     }
 
      

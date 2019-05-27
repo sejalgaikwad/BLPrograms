@@ -10,4 +10,5 @@ for(var i=0;i<n;i++)
 {
 array[i]=read.question( );
 }
+
 util.sortarrayInt(array);
