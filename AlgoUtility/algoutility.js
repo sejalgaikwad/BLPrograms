@@ -6,18 +6,19 @@ module.exports={
 isAnagram (str1, str2)
  {
 
-  if (str1.length !=str2.length) 
+  if (str1.length !=str2.length) // If length of both strings is not same, 
+                                // then they cannot be anagram 
   {
      
      console.log("String is not anagarm")
   }
   
-  var sortStr1 = str1.split('').sort().join('');
+  var sortStr1 = str1.split('').sort().join('');   //split, join, sort string
   var sortStr2 = str2.split('').sort().join('');
 
-  if(sortStr1 == sortStr2)
+  if(sortStr1 == sortStr2)                         // //check string is equal or not
   {
-     console.log("String is angram")
+     console.log("String is angram")      
   }
   else
   {
@@ -58,7 +59,7 @@ console.log(PrimeNum)
 
 sortarrayInt(array) 
 {
-  var sort = array.sort(function (a, b) { return a - b });
+  var sort = array.sort()         //sort array
   console.log(sort)
 
   var number = read.question("enter the number which you want to search: ")
@@ -77,26 +78,28 @@ binarySearchInt(arr, number)
 
   while (low < high) 
   {
-    
-    if (arr[mid] == number) 
+    if (arr[mid] == number)        // If the element is present at the middle itself 
     {
-      console.log("number is present in " + (mid + 1) + "rd position")
+      console.log("number is present in " + (mid + 1) + " position")
     }
-    else if (arr[mid] > number) 
+    else if (arr[mid] > number) // If element is smaller than mid, then 
+                                // it can only be present in left subarray
     {
 
       high = mid - 1
     }
-    else 
+    else                            // Else the element can only be present 
+                                        // in right subarray
     {
       low = mid + 1
       mid = Math.floor((high + low) / 2)
     }
-  }
-    if (low > high) 
+  
+    if (low > high)                   // We reach here when element is not present in array 
     { 
       console.log("Number is not found")
     }
+  }
 },
 
   /*binarySearch method for String*/
@@ -119,22 +122,24 @@ binarySearchInt(arr, number)
   
     while (low < high) 
     {
-       if (arr[mid] == string) 
+       if (arr[mid] == string)  // If the element is present at the middle itself 
       {
         console.log("string is present in " + (mid + 1) + "rd position")
         
       }
-      else if (arr[mid] > string)
+      else if (arr[mid] > string)        // If element is smaller than mid, then 
+                                      // it can only be present in left subarray
        {
             high = mid - 1
        }
-      else 
+      else                                // Else the element can only be present 
+                                     // in right subarray
       {
         low = mid + 1
         mid = Math.floor((high + low) / 2)
       }
     
-    if (low > high) 
+    if (low > high)             // We reach here when element is not present in array 
       {
         console.log("String is not Found")
       }
@@ -147,8 +152,12 @@ insertionSortInt(arr)
 {
   for (var i = 1; i < arr.length; i++) 
   {
-    var temp = parseInt(arr[i]);
+    var temp = parseInt(arr[i]);      
     var j = i - 1;
+     /* Move elements of arr[0..i-1], that are  
+        greater than key, to one position ahead  
+        of their current position */
+
     while (j >= 0 && parseInt(arr[j]) > temp) 
     {
       arr[j + 1] = parseInt(arr[j]);
@@ -161,12 +170,17 @@ insertionSortInt(arr)
 
 /*insertionSort method for String*/
 
-insertionSortString(arr) 
+
+insertionSortString(arr)    /*Function to sort array using insertion sort*/
 {
   for (var i = 1; i < arr.length; i++) 
   {
     var temp = arr[i];
     var j = i - 1;
+
+     /* Move elements of arr[0..i-1], that are  
+        greater than key, to one position ahead  
+        of their current position */
     while (j >= 0 && arr[j] > temp) 
     {
       arr[j + 1] = arr[j];
@@ -186,18 +200,15 @@ bubbleSortInt(arr)
   {
     for (var j = 0; j < n - i - 1; j++) 
     {
-      if (parseInt(arr[j]) > parseInt(arr[j + 1])) 
+      if (parseInt(arr[j]) > parseInt(arr[j + 1]))  //check 1st element is greater or not if yes then swap
       {
-        var temp = parseInt(arr[j]);
+        var temp = parseInt(arr[j]);                 //  swap arr[j+1] and arr[i] 
         arr[j] = parseInt(arr[j + 1]);
         arr[j + 1] = temp;
       }
     }
   }
-
   return arr; 
-  
-  
 },
 
 /*bubbleSort method for String */
@@ -209,9 +220,9 @@ bubbleSortString(arr)
   {
     for (var j = 0; j < n - i - 1; j++) 
     {
-      if ((arr[j]) > (arr[j + 1])) 
+      if ((arr[j]) > (arr[j + 1]))           //check 1st element is greater or not if yes then swap
       {
-        var temp = (arr[j]);
+        var temp = (arr[j]);                       // swap arr[j+1] and arr[i] 
         arr[j] = (arr[j + 1]);
         arr[j + 1] = temp;
       }
@@ -228,10 +239,10 @@ StopwatchSearchAndSort(arr) {
 
   //binary search
 
-  var start = this.stopwatchmill()
+  var start = this.stopwatchmill()      //start time
   var temp = this.sortarrayInt(arr)
-  var stop = this.stopwatchmill()
-  var totaltime1 = stop - start;
+  var stop = this.stopwatchmill()        //stop time
+  var totaltime1 = stop - start; //Measure the elapsed time between start and end
   console.log("Binary Search take " + totaltime1 + " millsecond to exicute the code");
   console.log();
 
@@ -241,7 +252,7 @@ StopwatchSearchAndSort(arr) {
   var start = this.stopwatchmill()
   var temp = this.bubbleSortInt(arr)
   var stop = this.stopwatchmill()
-  var totaltime2 = stop - start;
+  var totaltime2 = stop - start; //Measure the elapsed time between start and end
   console.log("Bubble Sort take " + totaltime2 + " millsecond  to exicute the code");
   console.log();
 
@@ -250,7 +261,7 @@ StopwatchSearchAndSort(arr) {
   var start = this.stopwatchmill()
   var temp = this.insertionSortInt(arr)
   var stop = this.stopwatchmill()
-  var totaltime3 = stop - start;
+  var totaltime3 = stop - start; //Measure the elapsed time between start and end
   console.log("Insertion Sort take " + totaltime3 + " millsecond  to exicutethe code");
 },
 
@@ -260,7 +271,6 @@ stopwatchmill()
   var date = new Date();
   time = date.getMilliseconds();
   console.log(time)
-
   return time
 },
 
@@ -273,7 +283,7 @@ vendingMachine(arr, amount)
   var notes = 0
   for (var i = 0; i < arr.length; i++) 
   {
-    if (amount / arr[i] >= 1) 
+    if (amount / arr[i] >= 1)               
     {
       var c = Math.floor(amount / arr[i])
       notes = notes + c
@@ -289,7 +299,7 @@ vendingMachine(arr, amount)
 
 /** Find day in a week using formula **/
 
-dayOfWeek(d, m, y) 
+dayOfWeek(d, m, y) //m (month), d (day), and y (year)
 {
   var y0 = y - parseInt((14 - m)) / 12;
   var x = y0 + parseInt(y0 / 4) - parseInt(y0 / 100) + parseInt((y0 / 400));
@@ -305,14 +315,13 @@ dayOfWeek(d, m, y)
 
 convertToF(celsius) 
 {
-  
-  var fahrenheit = (celsius * (9 / 5)) + 32;
+  var fahrenheit = (celsius * (9 / 5)) + 32; //Celsius to Fahrenheit
   console.log("temperature in Fahrenheit = "+fahrenheit)
 },
 
 convertToC(fahrenheit) 
 {
-  var celsius = (fahrenheit - 32) * 5 / 9;
+  var celsius = (fahrenheit - 32) * 5 / 9; //Fahrenheit to Celsius
   console.log("temperature in Celsius = " +celsius)
 },
 

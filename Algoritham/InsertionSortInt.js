@@ -6,7 +6,7 @@ var n =read.question("Enter size of array: ");
 console.log("enter element which will sort : ");
 for(var i=0;i < n;i++) 
 {
-arr[i]=read.question( );
+arr[i]=read.question( );               
 }
 
 util.insertionSortInt(arr);

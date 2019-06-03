@@ -1,3 +1,4 @@
+function tripl(){
 var read= require('readline-sync');
 var util=require('../FunctionalUtility/FUtility');
 var arr=[]
@@ -9,3 +10,6 @@ for(var i=0;i<n;i++)
 }
 
 util.triplet(arr);
+}
+module.export=
+    tripl();

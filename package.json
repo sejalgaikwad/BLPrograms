@@ -1,0 +1,26 @@
+{
+  "name": "programs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sejalgaikwad/BLPrograms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sejalgaikwad/BLPrograms/issues"
+  },
+  "homepage": "https://github.com/sejalgaikwad/BLPrograms#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}

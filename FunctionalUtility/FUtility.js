@@ -3,13 +3,12 @@ var read= require('readline-sync');
 module.exports=
 {
 
-
  /* User Input and Replace String Templet "Hello <<Username>>, How are you?" */
 
  strRepalce(name)
  {
     var str="Hello,<<User name>> How are you";
-    while(name.length<3)
+    while(name.length<3) //  User_name contain atleast 3 character 
     {
         console.log("User name contain atleast 3 character ");
         var read=require('readline-sync');
@@ -29,16 +28,16 @@ module.exports=
 
      for(var i=1;i<=number;i++)
      {
-         var num=Math.random();
-         if(num<0.5)
+         var num=Math.random(); ///Random Function to get value between 0 and 1.
+         if(num<0.5)           //If < 0.5
          {
-            console.log("head")
+            console.log("head") //getting head
             head++;
              
          }
          else
          {
-            console.log("tail")
+            console.log("tail")      //getting tail
              tail++;
          }
      }
@@ -51,7 +50,7 @@ module.exports=
 
  leapyear(year)
  {
-   if(year%400==0 || year%4==0 && year%100!=0)
+   if(year%400==0 || year%4==0 && year%100!=0) 
    {
        console.log(year+" is a leap year");
    }
@@ -68,7 +67,7 @@ module.exports=
  {
     var i=0;
     var power=1;
-    while(i<=number)
+    while(i<=number)//repeat until i equals N.
     {
         console.log("2^"+i+"="+power);
 
@@ -87,11 +86,11 @@ module.exports=
      var result=0;
      for(var temp=2;temp<=num;temp++)
      {
-         HarSeries +="+(1/"+temp+")"
+         HarSeries +="+(1/"+temp+")" ///print 1/1 + 1/2 + 1/3 + ... + 1/N
      }
-     while(num>0)
+     while(num>0) //num is not equal to zero
      {
-         result=result + 1/num;
+         result=result + 1/num;  //Print the  total Nth Harmonic Value.
          num--
      }
      console.log(HarSeries+" = "+result);
@@ -102,12 +101,12 @@ module.exports=
 
  Fact(num)
  {
-     while(num%2 == 0)
+     while(num%2 == 0)  //num divide by 2 reminder is zero
      {
          console.log(2 + ' ')
-         num =num/2;
+         num =num/2;   //num divide by 2
      }
-     for(var i=3;i<=Math.sqrt(num); i=i+2)
+     for(var i=3;i<=Math.sqrt(num); i=i+2)  
      {
          while(num % i==0)
          {
@@ -115,7 +114,7 @@ module.exports=
              num=num/i;
          }
      }
-     if(num > 2)
+     if(num > 2)  //num is greter than 2
      console.log(num+'');
  },
 
@@ -128,12 +127,12 @@ module.exports=
      var bets=0;
      var cash=stake;
     
-         while(cash > 0 && cash < goal)
+         while(cash > 0 && cash < goal) 
          {
            for(var i=0;i<trial;i++)
             {
                bets++
-             if(Math.random()<0.5)
+             if(Math.random()<0.5)  ///Random Function to get value between 0 and 1. If<0.5
              {
                  cash++;     // Win 
              }
@@ -179,10 +178,10 @@ module.exports=
   array(row,colm)
     {
         var arr =[];
-        for(var i=0;i<row;i++)
+        for(var i=0;i<row;i++)   //this for loop use for ROW
         {
             arr[i]=[];
-            for(var j=0;j<colm;j++)
+            for(var j=0;j<colm;j++)  ////this for loop use for COLUMN
             {
                 var read= require('readline-sync');
                 arr[i][j]=read.question("enter the Element of :'row'"+i+" 'column'"+j+" :" )
@@ -205,7 +204,7 @@ module.exports=
                  for(var k=j+1;k<arr.length;k++)
                  {
                      
-                    if(parseInt(arr[i])+parseInt(arr[j])+parseInt(arr[k])==0)
+                    if(parseInt(arr[i])+parseInt(arr[j])+parseInt(arr[k])==0)//if addition of three integer is equal to 0
                     {
                         console.log("Sum of three integer "+arr[i]+" "+arr[j]+" "+arr[k]+" ")
                     }
@@ -242,13 +241,13 @@ module.exports=
  },
 findTime()
 {
-  var start=this.stopwatchmill();
+  var start=this.stopwatchmill(); //Start the Stopwatch 
   console.log("Start time: "+ start)
  
-  var stop=this.stopwatchmill();
+  var stop=this.stopwatchmill();  //End the Stopwatch
   console.log("Stop time: "+ stop)
 
-  var time=stop-start;
+  var time=stop-start; // Measure the elapsed time between start and end
   console.log(time);
 },
 
@@ -287,7 +286,8 @@ findTime()
  
  windchill(v,t)
  {
-     if(t>=50 || v>=120 || v<=3)
+     if(t>=50 || v>=120 || v<=3)//if t is larger than 50 in absolute value or if v is larger
+                                   //than 120 or less than 3
      {
          console.log("invalid input")
      }
