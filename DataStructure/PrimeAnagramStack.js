@@ -12,7 +12,7 @@ function getAnagram()
     var num;
   try 
   {
-    num = rd.question('Enter a number ::');  //call util class method
+    num = rd.question('Enter a number: ');  //call util class method
     ul.primeAnagramStack(num);
   }
   catch (err)

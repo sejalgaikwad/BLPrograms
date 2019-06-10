@@ -188,7 +188,7 @@ class LinkedList
         return;
         }
     var n = this.head.data;
-    this.head = this.head.next;//pointing fist to the next elment in that list
+    this.head = this.head.next;//pointing first to the next elment in that list
     this.size--;//decrementing size
     return n;
  }

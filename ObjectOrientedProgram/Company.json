@@ -1,0 +1,26 @@
+{
+    "company":
+    [
+        {
+            "name":"Tcs",
+            "Symbol":"T",
+            "Shares":15,
+            "Price":100
+        },
+
+        {
+            "name":"Wipro",
+            "Symbol":"W",
+            "Shares":25,
+            "Price":200
+        },
+
+
+        {
+            "name":"Capge",
+            "Symbol":"^",
+            "Shares":35,
+            "Price":300
+        }
+    ]
+}

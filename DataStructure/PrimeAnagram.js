@@ -11,7 +11,7 @@ function getAnagram()
  var num;
  try 
  {
- //num = rd.question('Enter a number ::');
+ num = rd.question('Enter a number :');
  //call util class method
  ul.primeAnagram();
  }

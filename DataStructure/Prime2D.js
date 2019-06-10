@@ -11,7 +11,7 @@ try
   var num;
   try 
   {
-    num = rd.question('Enter a number ::');  //call util class method
+    num = rd.question('Enter a number :');  //call util class method
     ul.prime(num);
   }
   catch (err) 

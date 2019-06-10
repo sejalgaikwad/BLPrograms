@@ -1,0 +1,49 @@
+{
+    "Rice":
+    [
+        {"Name" : "Vada Kolam ",
+        "Weight" : 5,
+        "Price" : 60
+        },
+        {"Name" : "Basmati",
+        "Weight" : 6,
+        "Price" : 70
+        },
+        {"Name" : "Brown Rice ",
+         "Weight" : 7,
+         "Price" : 80             
+        }
+    ],
+    "Pulses":
+    [
+        {"Name" : "MungBean ",
+        "Weight" : 1,
+        "Price" : 70
+        },
+        {"Name" : "ToorBean ",
+        "Weight" : 2,
+        "Price" : 80
+        },
+        {"Name" : "KidneyBean ",
+         "Weight" : 3,
+         "Price" : 40            
+        }
+    ],
+    "Wheats":
+    [
+        {"Name" : "Sabut Wheat ",
+        "Weight" : 5,
+        "Price" : 30
+        },
+        {"Name" : "Sharbati Wheat ",
+        "Weight" : 6,
+        "Price" : 40
+        },
+        {"Name" : "Aashirvaad Wheat ",
+         "Weight" : 7,
+         "Price" : 50             
+        }
+    ]
+}
+
+

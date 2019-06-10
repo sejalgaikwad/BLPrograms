@@ -188,7 +188,7 @@ module.exports = {
              ['500 - 600'], ['600 - 700'], ['700 - 800'], ['800 - 900'], ['900 - 1000']]
     //calling primeNumber method from utility of algorithms
     for (num = 2; num < 1000; num++) {
-      if (this.isprime(num)) {
+      if (this.getPrimeNumber(num)) {
         arr.push(num);
         //console.log(arr)
       }
@@ -199,7 +199,7 @@ module.exports = {
 
       for (let j = i + 1; j < arr.length; j++) {
 
-        if (this.isAnagram(arr[i], arr[j])) {
+        if (this.findAnagram(arr[i], arr[j])) {
           console.log(arr[i], arr[j])
           if (arr[i] <= range) {
             if (arr[j] <= range) {
@@ -252,7 +252,7 @@ module.exports = {
     array1 = [['0 - 100'], ['100 - 200'], ['200- 300'], ['300 - 400'], ['400 - 500'],
     ['500 - 600'], ['600 - 700'], ['700 - 800'], ['800 - 900'], ['900 - 1000']]
     for (num = 2; num < num1; num++) {
-      if (this.isprime(num)) {
+      if (this.getPrimeNumber(num)) {
         if (num <= range) {
           array1[k][p] = num;
           p++;
@@ -276,65 +276,5 @@ module.exports = {
     }
 
   },
-  /*****************Prime no ****************/
-  isprime(num) {
-    if (num == 0 || num == 1) {
-      return false;
-    }
-    var temp = 0;
-    for (let i = 2; i < num; i++) {
-
-      if (num % i == 0) {
-        temp++;
-      }
-    } if (temp == 0) {
-      //console.log(num)
-      return true;
-    }
-    else {
-      return false;
-    }
-  },
-  /************************is Prime **************************/
-  isAnagram(string1, string2) {
-    string1=string1+"";
-    string2=string2+"";
-    if (string1.length != string2.length) {
-    return false;
-    }
-    var arr = [];
-    for (let index = 0; index < 36; index++) {
-    arr[index] = 0;
-    }
-    for (let index = 0; index < string1.length; index++) {
-    var ch = string1.charAt(index);
-    if (ch >= 'a' && ch <= 'z') {
-    var code = ch.charCodeAt(0);
-    arr[code - 97]++;
-    } else if (ch >= 'A' && ch <= 'Z') {
-    var code = ch.charCodeAt(0);
-    arr[code - 65]++;
-    } else {
-    var code = ch.charCodeAt(0);
-    arr[code - 22]++;
-    }
-    ch = string2.charAt(index);
-    if (ch >= 'a' && ch <= 'z') {
-    var code = ch.charCodeAt(0);
-    arr[code - 97]--;
-    } else if (ch >= 'A' && ch <= 'Z') {
-    var code = ch.charCodeAt(0);
-    arr[code - 65]--;
-    } else {
-    var code = ch.charCodeAt(0);
-    arr[code - 22]--;
-    }
-    }
-    for (let index = 0; index < 36; index++) {
-    if (arr[index] != 0) {
-    return false;
-    }
-    }
-    return true;
-    },
+  
 }
